@@ -19,7 +19,7 @@ We found a wonderful [OpenGL cookbook](https://www.oreilly.com/library/view/open
 
 
 ##### Our next three concrete tasks are:
-1. **Hwei-Shin**: Download OpenGL and finish chapter 1 of the OpenGL cookbook
+1. **Hwei-Shin**: Go through chapter 2 of the OpenGL cookbook
 2. **Cassandra**: Go through chapter 2 of the OpenGL cookbook
 3. **Enmo**: Complete tutorial 1 from the OpenGL cookbook
 4. **Everyone**: Go through chapter 3 of the OpenGL cookbook
