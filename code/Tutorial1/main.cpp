@@ -1,4 +1,4 @@
-//gcc -Wall -lglut -lGL `pkg-config --cflags glfw3` main.cpp -o main `pkg-config --static --libs glfw3`
+//gcc -Wall -lglut -lGL `pkg-config --cflags glfw3` main.cpp -o main `pkg-config --static --libs glfw3` -lGLU -lGL -lglut
 
 #include <GLFW/glfw3.h>
 #include <stdlib.h>
