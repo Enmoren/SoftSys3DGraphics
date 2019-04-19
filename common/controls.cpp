@@ -1,113 +1,104 @@
-#define GLM_FORCE_RADIANS
+// Include GLFW
+#include <GLFW/glfw3.h>
+extern GLFWwindow* window; // The "extern" keyword here is to access the variable "window" declared in tutorialXXX.cpp. This is a hack to keep the tutorials simple. Please avoid this.
 
 // Include GLM
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+using namespace glm;
 
 #include "controls.hpp"
 
-//the view matrix and projection matrix
-glm::mat4 g_view_matrix;
-glm::mat4 g_projection_matrix;
+glm::mat4 ViewMatrix;
+glm::mat4 ProjectionMatrix;
+
 glm::mat4 getViewMatrix(){
-	return g_view_matrix;
+	return ViewMatrix;
 }
 glm::mat4 getProjectionMatrix(){
-	return g_projection_matrix;
+	return ProjectionMatrix;
 }
 
 
-//initial position of the camera
-glm::vec3 g_position = glm::vec3( 0, 0, 0.0 );
-const float speed = 3.0f; // 3 units / second
-float g_initial_fov = glm::pi<float>()*0.25f;
+// Initial position : on +Z
+glm::vec3 position = glm::vec3( 0, 0, 5 );
+// Initial horizontal angle : toward -Z
+float horizontalAngle = 3.14f;
+// Initial vertical angle : none
+float verticalAngle = 0.0f;
+// Initial Field of View
+float initialFoV = 45.0f;
 
-//compute the view matrix and projection matrix based on the
-//user input
-void computeViewProjectionMatrices(GLFWwindow* window){
-	static double last_time = glfwGetTime();
+float speed = 3.0f; // 3 units / second
+float mouseSpeed = 0.005f;
+
+
+
+void computeMatricesFromInputs(){
+
+	// glfwGetTime is called only once, the first time this function is called
+	static double lastTime = glfwGetTime();
+
 	// Compute time difference between current and last frame
-	double current_time = glfwGetTime();
-	float delta_time = float(current_time - last_time);
+	double currentTime = glfwGetTime();
+	float deltaTime = float(currentTime - lastTime);
 
-	int width, height;
-	glfwGetWindowSize(window, &width, &height);
+	// Get mouse position
+	double xpos, ypos;
+	glfwGetCursorPos(window, &xpos, &ypos);
 
-	//direction vector for movement
-	glm::vec3 direction_z(0, 0, -0.5);
-	glm::vec3 direction_y(0, 0.5, 0);
-	glm::vec3 direction_x(0.5, 0, 0);
+	// Reset mouse position for next frame
+	glfwSetCursorPos(window, 1024/2, 768/2);
 
-	//up vector
-	glm::vec3 up = glm::vec3(0,-1,0);
+	// Compute new orientation
+	horizontalAngle += mouseSpeed * float(1024/2 - xpos );
+	verticalAngle   += mouseSpeed * float( 768/2 - ypos );
 
+	// Direction : Spherical coordinates to Cartesian coordinates conversion
+	glm::vec3 direction(
+		cos(verticalAngle) * sin(horizontalAngle),
+		sin(verticalAngle),
+		cos(verticalAngle) * cos(horizontalAngle)
+	);
+
+	// Right vector
+	glm::vec3 right = glm::vec3(
+		sin(horizontalAngle - 3.14f/2.0f),
+		0,
+		cos(horizontalAngle - 3.14f/2.0f)
+	);
+
+	// Up vector
+	glm::vec3 up = glm::cross( right, direction );
+
+	// Move forward
 	if (glfwGetKey( window, GLFW_KEY_UP ) == GLFW_PRESS){
-		g_position += direction_y * delta_time * speed;
+		position += direction * deltaTime * speed;
 	}
-	else if (glfwGetKey( window, GLFW_KEY_DOWN ) == GLFW_PRESS){
-		g_position -= direction_y * delta_time * speed;
+	// Move backward
+	if (glfwGetKey( window, GLFW_KEY_DOWN ) == GLFW_PRESS){
+		position -= direction * deltaTime * speed;
 	}
-	else if (glfwGetKey( window, GLFW_KEY_RIGHT ) == GLFW_PRESS){
-		g_position += direction_z * delta_time * speed;
+	// Strafe right
+	if (glfwGetKey( window, GLFW_KEY_RIGHT ) == GLFW_PRESS){
+		position += right * deltaTime * speed;
 	}
-	else if (glfwGetKey( window, GLFW_KEY_LEFT ) == GLFW_PRESS){
-		g_position -= direction_z * delta_time * speed;
-	}
-	else if (glfwGetKey( window, GLFW_KEY_PERIOD ) == GLFW_PRESS){
-		g_position -= direction_x * delta_time * speed;
-	}
-	else if (glfwGetKey( window, GLFW_KEY_COMMA ) == GLFW_PRESS){
-		g_position += direction_x * delta_time * speed;
+	// Strafe left
+	if (glfwGetKey( window, GLFW_KEY_LEFT ) == GLFW_PRESS){
+		position -= right * deltaTime * speed;
 	}
 
+	float FoV = initialFoV;// - 5 * glfwGetMouseWheel(); // Now GLFW 3 requires setting up a callback for this. It's a bit too complicated for this beginner's tutorial, so it's disabled instead.
 
-	float aspect_ratio = (float)width/(float)height;
-	float nearZ = 0.1f;
-	float farZ = 100.0f;
-	float top = tan(g_initial_fov/2*nearZ);
-	float right = aspect_ratio*top;
-	float left = -right;
-	float bottom = -top;
+	// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
+	ProjectionMatrix = glm::perspective(glm::radians(FoV), 4.0f / 3.0f, 0.1f, 100.0f);
+	// Camera matrix
+	ViewMatrix       = glm::lookAt(
+								position,           // Camera is here
+								position+direction, // and looks here : at the same position, plus "direction"
+								up                  // Head is up (set to 0,-1,0 to look upside-down)
+						   );
 
-	g_projection_matrix = glm::frustum(left, right, bottom, top, nearZ, farZ);
-
-	// update the view matrix
-	g_view_matrix       = glm::lookAt(
-			g_position,           // camera position
-			g_position+direction_z, // viewing direction
-			up                  // up direction
-			);
-
-	last_time = current_time;
-}
-
-void computeStereoViewProjectionMatrices(GLFWwindow* window, float IPD, float depthZ, bool left_eye){
-	int width, height;
-	glfwGetWindowSize(window, &width, &height);
-	//up vector
-	glm::vec3 up = glm::vec3(0,-1,0);
-	glm::vec3 direction_z(0, 0, -1);
-
-	float left_right_direction = -1.0f;
-	if(left_eye)
-		left_right_direction = 1.0f; //left eye
-
-	float aspect_ratio = (float)width/(float)height;
-	float nearZ = 1.0f;
-	float farZ = 100.0f;
-    double frustumshift = (IPD/2)*nearZ/depthZ;
-	float top = tan(g_initial_fov/2)*nearZ;
-	float right = aspect_ratio*top+frustumshift*left_right_direction; //half screen
-	float left = -aspect_ratio*top+frustumshift*left_right_direction;
-	float bottom = -top;
-
-	g_projection_matrix = glm::frustum(left, right, bottom, top, nearZ, farZ);
-
-	// update the view matrix
-	g_view_matrix       = glm::lookAt(
-			g_position-direction_z+glm::vec3(left_right_direction*IPD/2, 0, 0), // eye position
-			g_position+glm::vec3(left_right_direction*IPD/2, 0, 0), // centre position
-			up// up direction
-			);
-
+	// For the next frame, the "last time" will be "now"
+	lastTime = currentTime;
 }
