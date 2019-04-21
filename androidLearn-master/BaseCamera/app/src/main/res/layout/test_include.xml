@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/testInclude"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--TextureView的最小AIP 14 ，现在改到最小已经是21-->
+<Button
+    android:id="@+id/btn2"
+    android:text="test1"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    />
+</LinearLayout>
