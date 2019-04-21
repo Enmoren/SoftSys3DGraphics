@@ -16,9 +16,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <shader.hpp>
-#include <texture.hpp>
-#include <controls.hpp>
+#include <shader_copy.hpp>
+#include <texture_copy.hpp>
+#include <controls_copy.hpp>
 #include <common.h>
 
 #include <ObjLoader.hpp>
@@ -154,7 +154,21 @@ glfwSetInputMode(g_window,GLFW_STICKY_KEYS,GL_TRUE);
 glfwSetKeyCallback(g_window, key_callback);
 
 GLuint program_id = LoadShaders("pointcloud.vert", "pointcloud.frag");
+
 ObjLoader *obj_loader = new ObjLoader();
+
+// // Read our .obj file
+// std::vector<glm::vec3> vertices;
+// std::vector<glm::vec2> uvs;
+// std::vector<glm::vec3> normals; // Won't be used at the moment.
+// bool res = loadOBJ("obj_samples/dragon.obj", vertices, uvs, normals);
+//
+// if(res){
+// 	fprintf(stderr, "Final to Load the 3D file\n");
+// 	glfwTerminate();
+// 	exit(EXIT_FAILURE);
+//
+// }
 
 int result = 0;
 if(argc > 1){

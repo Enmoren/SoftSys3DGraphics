@@ -1,9 +1,16 @@
-#version 150 core
+#version 330 core
 
-out vec4 color;
-in vec4 color_based_on_position;
+// Interpolated values from the vertex shaders
+in vec2 UV;
+
+// Ouput data
+out vec3 color;
+
+// Values that stay constant for the whole mesh.
+uniform sampler2D myTextureSampler;
 
 void main(){
-	//pipe the output directly
-	color = color_based_on_position;
+
+	// Output color = color of the texture at the specified UV
+	color = texture( myTextureSampler, UV ).rgb;
 }

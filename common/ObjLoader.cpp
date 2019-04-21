@@ -1,3 +1,10 @@
+#include <vector>
+#include <stdio.h>
+#include <string>
+#include <cstring>
+
+#include <glm/glm.hpp>
+
 #include <ObjLoader.hpp>
 
 /**
