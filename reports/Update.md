@@ -57,8 +57,8 @@ In an effort to make the objects look more realistic, we researched different sh
 
 ### Next Steps
 1. (Hwei-Shin) Complete the OpenCV aspect of the project to detect ArUco markers and test on our own laptops. In order to complete this, we want to fully understand some specific syntax that we have encountered, such as:
-- Overloaded `<<` and `>>`
-- What it means when `cv::Mat& [variable name]` is passed as a parameter to a function.
+  - Overloaded `<<` and `>>`
+  - What it means when `cv::Mat& [variable name]` is passed as a parameter to a function.
 2. (Enmo and Cassandra) Consolidate the texture and shading code to produce a versatile `obj` file loader with realistic illumination based on where the user sets a light source.
 3. (Enmo and Cassandra) Refine interactive components.
 4. (All) Combine OpenGL and OpenCV code.
