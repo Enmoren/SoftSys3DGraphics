@@ -1,6 +1,6 @@
 PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
 # export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
-CFILES = ../common/shader_copy.cpp ../common/texture_copy.cpp ../common/controls_copy.cpp ../common/ObjLoader.cpp main.cpp
+CFILES = ../common/shader.cpp ../common/texture.cpp ../common/controls.cpp ../common/ObjLoader.cpp main.cpp
 CFLAGS = -c
 OPT = -O3
 INCLUDES = -I../common -I/usr/include -I/usr/include/SOIL -I. `pkg-config --cflags glfw3` `pkg-config --cflags assimp` `pkg-config --cflags opencv`
