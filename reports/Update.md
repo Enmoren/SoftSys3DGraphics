@@ -69,7 +69,7 @@ In an effort to make the objects look more realistic, we researched different sh
 - [Trello Board](https://trello.com/b/Dw6JxDUr/3dgraphics)
 - [OpenGL Cookbook](https://www.oreilly.com/library/view/opengl-data-visualization/9781782169727/): we used this to accomplish our MVP and medium stretch goal.
 - [Android OpenGL Tutorial](https://github.com/doggycoder/AndroidOpenGLDemo): used in android studio stretch goal.
--[OpenCV Markerless Augmented Reality](https://medium.com/@ahmetozlu93/marker-less-augmented-reality-by-opencv-and-opengl-531b2af0a130): used for the OpenCV stretch goal.
--[Poly: Open-Source 3D Models](https://poly.google.com/): contains many open source 3d models that we tried loading in.
+- [OpenCV Markerless Augmented Reality](https://medium.com/@ahmetozlu93/marker-less-augmented-reality-by-opencv-and-opengl-531b2af0a130): used for the OpenCV stretch goal.
+- [Poly: Open-Source 3D Models](https://poly.google.com/): contains many open source 3d models that we tried loading in.
 - [Obj Loader Library](https://github.com/rlk/obj): used for the texture and shading stretch goal.
 - [Shader tutorial](http://www.opengl-tutorial.org/): used for texture and shading stretch goal.
