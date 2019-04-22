@@ -239,7 +239,7 @@ int main(void)
   GLFWwindow* window;
   int width, height;
   if (!glfwInit()){
-    exit(EXIT_FAILURE);gcc -Wall -lglut -lGL `pkg-config --cflags glfw3` Tutorial1/main_gaussian_demo.cpp -o main_gaussian_demo `pkg-config --static --libs glfw3` -lGLU -lGL -lglut
+    exit(EXIT_FAILURE);
   }
   window = glfwCreateWindow(WINDOWS_WIDTH, WINDOWS_HEIGHT,"Chapter 3: 3D Data Plotting", NULL, NULL);
   if (!window){
