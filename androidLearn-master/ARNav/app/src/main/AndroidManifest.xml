@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dragon.arnav">
+<!--添加对应有权限-->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera2.full" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
+        <!--启动高德地图服务,下面的value不要照着输入，请输入你申请是的apikey value-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="211dcd346c8c0c531544f90b1b06706f"/>
+<!--android:configChanges="orientation|keyboardHidden|screenSize"这句是支持横竖屏切换，要求系统4.0以上-->
+        <activity android:name=".Main"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".basicFuction.location.location"
+                  android:label="@string/locationmodesource_demo"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".basicFuction.poi.PoiClick"
+                  android:label="@string/poiclick_demo"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".basicFuction.locationMap.LocationMap"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".basicFuction.camera2.Camera2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".basicFuction.basic.basicMap"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".basicFuction.locationMap.PoiAroundSearch"/>
+
+
+        <!--开启定位服务要加上这一条，否则会定位失败，报错误码为10的错误-->
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
+    </application>
+
+</manifest>

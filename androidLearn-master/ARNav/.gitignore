@@ -1,0 +1,11 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/map
+/app/src/main/java/com/dragon/arnav/basicFuction/camera2/
+/app/src/main/res/layout/main_camera2.xml

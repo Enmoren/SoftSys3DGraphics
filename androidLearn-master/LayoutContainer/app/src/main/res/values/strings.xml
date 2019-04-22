@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LayoutContainer</string>
+    <string name="linear_layout_demo">LinearLayout</string>
+    <string name="linear_layout_description">线性布局器的应用测试</string>
+</resources>
