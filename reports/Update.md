@@ -65,6 +65,8 @@ In an effort to make the objects look more realistic, we researched different sh
 5. Make objects even more realistic by writing custom shader files.
 
 ### Resources
+- [GitHub Repo](https://github.com/Enmoren/SoftSys3DGraphics)
+- [Trello Board](https://trello.com/b/Dw6JxDUr/3dgraphics)
 - [OpenGL Cookbook](https://www.oreilly.com/library/view/opengl-data-visualization/9781782169727/): we used this to accomplish our MVP and medium stretch goal.
 - [Android OpenGL Tutorial](https://github.com/doggycoder/AndroidOpenGLDemo): used in android studio stretch goal.
 -[OpenCV Markerless Augmented Reality](https://medium.com/@ahmetozlu93/marker-less-augmented-reality-by-opencv-and-opengl-531b2af0a130): used for the OpenCV stretch goal.
