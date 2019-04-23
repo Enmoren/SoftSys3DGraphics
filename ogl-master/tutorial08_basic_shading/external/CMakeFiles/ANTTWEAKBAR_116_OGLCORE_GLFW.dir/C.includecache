@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../external/AntTweakBar-1.16/include/AntTweakBar.h
+stddef.h
+-
+string
+-
+string
+-
+
+/home/enmo/SoftSys3DGraphics/ogl-master/external/AntTweakBar-1.16/src/MiniGLFW.h
+
+/home/enmo/SoftSys3DGraphics/ogl-master/external/AntTweakBar-1.16/src/TwEventGLFW.c
+MiniGLFW.h
+/home/enmo/SoftSys3DGraphics/ogl-master/external/AntTweakBar-1.16/src/MiniGLFW.h
+AntTweakBar.h
+-
+
