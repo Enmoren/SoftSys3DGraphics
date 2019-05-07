@@ -57,9 +57,9 @@
 /* for arm, define it! */
 //#define __ARM__
 #ifdef  __ARM__
-#define device "/dev/video3"
+#define device "/dev/video1"
 #else
-#define device "/dev/video0"
+#define device "/dev/video"
 #endif
 
 /** 自定义的摄像头信息结构体 */
