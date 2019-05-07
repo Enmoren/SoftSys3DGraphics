@@ -56,18 +56,20 @@ In an effort to make the objects look more realistic, we researched different sh
 <p align="center"> <img src ="https://github.com/Enmoren/SoftSys3DGraphics/blob/master/reports/shader.png"/> </p>
 
 ### Next Steps
-1. Complete the OpenCV aspect of the project to detect ArUco markers and test on our own laptops. In order to complete this, we want to fully understand some specific syntax that we have encountered, such as:
-- Overloaded `<<` and `>>`
-- What it means when `cv::Mat& [variable name]` is passed as a parameter to a function.
-2. Consolidate the texture and shading code to produce a versatile `obj` file loader with realistic illumination based on where the user sets a light source.
-3. Refine interactive components.
-4. Combine OpenGL and OpenCV code.
+1. (Hwei-Shin) Complete the OpenCV aspect of the project to detect ArUco markers and test on our own laptops. In order to complete this, we want to fully understand some specific syntax that we have encountered, such as:
+  - Overloaded `<<` and `>>`
+  - What it means when `cv::Mat& [variable name]` is passed as a parameter to a function.
+2. (Enmo and Cassandra) Consolidate the texture and shading code to produce a versatile `obj` file loader with realistic illumination based on where the user sets a light source.
+3. (Enmo and Cassandra) Refine interactive components.
+4. (All) Combine OpenGL and OpenCV code.
 5. Make objects even more realistic by writing custom shader files.
 
 ### Resources
+- [GitHub Repo](https://github.com/Enmoren/SoftSys3DGraphics)
+- [Trello Board](https://trello.com/b/Dw6JxDUr/3dgraphics)
 - [OpenGL Cookbook](https://www.oreilly.com/library/view/opengl-data-visualization/9781782169727/): we used this to accomplish our MVP and medium stretch goal.
 - [Android OpenGL Tutorial](https://github.com/doggycoder/AndroidOpenGLDemo): used in android studio stretch goal.
--[OpenCV Markerless Augmented Reality](https://medium.com/@ahmetozlu93/marker-less-augmented-reality-by-opencv-and-opengl-531b2af0a130): used for the OpenCV stretch goal.
--[Poly: Open-Source 3D Models](https://poly.google.com/): contains many open source 3d models that we tried loading in.
+- [OpenCV Markerless Augmented Reality](https://medium.com/@ahmetozlu93/marker-less-augmented-reality-by-opencv-and-opengl-531b2af0a130): used for the OpenCV stretch goal.
+- [Poly: Open-Source 3D Models](https://poly.google.com/): contains many open source 3d models that we tried loading in.
 - [Obj Loader Library](https://github.com/rlk/obj): used for the texture and shading stretch goal.
 - [Shader tutorial](http://www.opengl-tutorial.org/): used for texture and shading stretch goal.
