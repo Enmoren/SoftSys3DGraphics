@@ -57,7 +57,7 @@
 /* for arm, define it! */
 //#define __ARM__
 #ifdef  __ARM__
-#define device "/dev/video4"
+#define device "/dev/video3"
 #else
 #define device "/dev/video0"
 #endif
