@@ -1,3 +1,5 @@
+//sudo apt-get install libsdl2-dev
+
 #include <GLFundamentals.hpp>
 #include <GLDemonstration.hpp>
 #include <obj.h>
