@@ -11,19 +11,19 @@
  *                      Copyleft (C) 2010  Late Lee
  *        This program is tested on LINUX PLATFORM, WITH GCC 4.x.
  *        The program is distributed in the hope that it will be
- *        useful, but WITHOUT ANY WARRANTY. Please feel free to 
+ *        useful, but WITHOUT ANY WARRANTY. Please feel free to
  *        use the program, and I feel free to ignore the related
- *        issues. Any questions or suggestions, or bugs, please 
+ *        issues. Any questions or suggestions, or bugs, please
  *        contact me at
  *        <$ echo -n "aHR0cDovL3d3dy5sYXRlbGVlLm9yZwo=" | base64 -d>
- *        or e-mail to 
+ *        or e-mail to
  *        <$ echo -n "bGF0ZWxlZUAxNjMuY29tCg==" | base64 -d>
  *        if you want to do this.
  *
  * @file   v4l2uvc.h
  * @author Late Lee <www.latelee.org>
  * @date   Tue Jan 18 2011
- * 
+ *
  * @brief
  * vedio capture for Vedio Surveillance System(VSS)
  * using v4l2 APIs
@@ -57,7 +57,7 @@
 /* for arm, define it! */
 //#define __ARM__
 #ifdef  __ARM__
-#define device "/dev/video1"
+#define device "/dev/video2"
 #else
 #define device "/dev/video"
 #endif
