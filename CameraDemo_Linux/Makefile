@@ -4,14 +4,14 @@
 CC=gcc
 
 CFLAGS= -g -Wall
-LDFLAGS= -lSDL 
+LDFLAGS= -lSDL
 
-target = capture 
+target = capture
 
 all: clean $(target)
 
 $(target): v4l2uvc.o main.o utils.o color.o
-	$(CC) $(CFLAGS)  $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 clean:
 	@echo cleaning...
@@ -21,7 +21,7 @@ clean:
 install:
 	@echo "                     Note:"
 	@echo "To install or not install,that is the question"
-	@echo 
+	@echo
 
 .PHONY:all clean install
 
