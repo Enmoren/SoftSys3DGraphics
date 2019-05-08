@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hharriman/softsys/SoftSys3DGraphics/code/opencv/arucodetection.cpp
+iostream
+-
+opencv2/aruco.hpp
+-
+opencv2/highgui/highgui.hpp
+-
+
