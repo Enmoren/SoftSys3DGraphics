@@ -3,12 +3,12 @@
 Using the ArUco library requires a version of OpenCV that is built with the ArUco module included. To do so, execute the following commands in the terminal (we were using Ubuntu 16):
 1. Clone the OpenCV repositories from Github (we cloned into our root directory):
 ```
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
+$ git clone https://github.com/opencv/opencv.git
+$ git clone https://github.com/opencv/opencv_contrib.git
 ```
 2. Update dependencies:
 ```
-sudo apt-get install libpng12-0 libpng12-dev
+$ sudo apt-get install libpng12-0 libpng12-dev
 ```
 3a. Prepare to build OpenCV. `cd` into the cloned OpenCV folder and make a build directory:
 ```
@@ -40,12 +40,12 @@ target_link_libraries( DetectMarkers ${OpenCV_LIBS} )
 ```
 4. Run CMake to generate the executable:
 ```
-cmake .
-make
+$ cmake .
+$ make
 ```
 5. Before running, download an image containing any ArUco markers you want to be recognized by the program.
 6. Run the code!
 ```
-./DetectMarkers "<path_to_marker_image>/marker.png" -d=10 -id=1
+$ ./DetectMarkers "<path_to_marker_image>/marker.png" -d=10 -id=1
 ```
 
