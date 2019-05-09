@@ -4,7 +4,7 @@
 CC=gcc
 
 CFLAGS= -g -Wall
-LDFLAGS= -lSDL
+LDFLAGS= `pkg-config --cflags --libs sdl2` -lSDL
 
 target = capture
 
@@ -26,3 +26,4 @@ install:
 .PHONY:all clean install
 
 ### end of Makefile
+

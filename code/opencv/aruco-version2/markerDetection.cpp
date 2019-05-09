@@ -1,5 +1,13 @@
+// Doesn't work!
+
 #include <opencv2/aruco.hpp>
+#include <sstream>
 #include <iostream>
+#include <string>
+#include <list>
+#include <functional>
+#include <vector>
+// #include <opencv2/legacy/legacy.hpp>
 
 using namespace std;
 using namespace cv;
