@@ -10,13 +10,13 @@ $ git clone https://github.com/opencv/opencv_contrib.git
 ```
 $ sudo apt-get install libpng12-0 libpng12-dev
 ```
-3a. Prepare to build OpenCV. `cd` into the cloned OpenCV folder and make a build directory:
+3. Prepare to build OpenCV. `cd` into the cloned OpenCV folder and make a build directory:
 ```
 $ cd ~/opencv
 $ mkdir build && cd build
 ```
 
-3b. Run CMake with the following line. Note that `OPENCV_EXTRA_MODULES_PATH` should be set to the absolute path to your cloned copy of the `opencv_contrib/modules` Github repository from step 1. We set `-DBUILD_EXAMPLES=on` so that we will be able to build and run our ArUco sample code, according to (this)[https://docs.opencv.org/3.4.0/d5/dae/tutorial_aruco_detection.html] tutorial from OpenCV.  
+4. Run CMake with the following line. Note that `OPENCV_EXTRA_MODULES_PATH` should be set to the absolute path to your cloned copy of the `opencv_contrib/modules` Github repository from step 1. We set `-DBUILD_EXAMPLES=on` so that we will be able to build and run our ArUco sample code, according to (this)[https://docs.opencv.org/3.4.0/d5/dae/tutorial_aruco_detection.html] tutorial from OpenCV.  
 ```
 $ cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -DBUILD_EXAMPLES=on ..
 $ make -j4
@@ -48,4 +48,4 @@ $ make
 ```
 $ ./DetectMarkers "<path_to_marker_image>/marker.png" -d=10 -id=1
 ```
-
+<p align="center"> <img src ="https://github.com/Enmoren/SoftSys3DGraphics/blob/master/reports/marker.gif"/> </p>
