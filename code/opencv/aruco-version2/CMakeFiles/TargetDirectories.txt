@@ -1,0 +1,3 @@
+/home/cassandra/SoftSys/SoftSys3DGraphics/code/opencv/aruco-version2/CMakeFiles/edit_cache.dir
+/home/cassandra/SoftSys/SoftSys3DGraphics/code/opencv/aruco-version2/CMakeFiles/detect_markers.dir
+/home/cassandra/SoftSys/SoftSys3DGraphics/code/opencv/aruco-version2/CMakeFiles/rebuild_cache.dir
