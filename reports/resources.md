@@ -18,3 +18,7 @@ This file consists of all the resources we referenced while working on our
 
 ### Not Recommended Resources
 1. [OpenCV Markerless Augmented Reality](https://medium.com/@ahmetozlu93/marker-less-augmented-reality-by-opencv-and-opengl-531b2af0a130): used briefly for an exploration into using ArUco markers. Not recommended (abandoned project that uses an outdated version of OpenCV, OpenCV 1.2)
+
+### Works Cited
+1. "Speeded up detection of squared fiducial markers", Francisco J.Romero-Ramirez, Rafael Munoz-Salinas, Rafael Medina-Carnicer, Image and Vision Computer, vol 76, pages 38-47, year 2018
+2. "Generation of fiducial marker dictionaries using mixed integer linear programming", S. Garrido-Jurado, R. Munoz Salinas, F.J. Madrid-Cuevas, R. Medina-Carnicer, Pattern Recognition:51, 481-491, 2016
