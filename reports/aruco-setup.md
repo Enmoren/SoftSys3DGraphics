@@ -1,3 +1,5 @@
+## Setting Up OpenCV's ArUco Module
+### Building OpenCV
 Using the ArUco library requires a version of OpenCV that is built with the ArUco module included. To do so, execute the following commands in the terminal (we were using Ubuntu 16):
 1. Clone the OpenCV repositories from Github (we cloned into our root directory):
 ```
@@ -23,7 +25,8 @@ $ make -j4
 * Check out this [Towards Data Science article](https://towardsdatascience.com/how-to-install-opencv-and-extra-modules-from-source-using-cmake-and-then-set-it-up-in-your-pycharm-7e6ae25dbac5) which shows how to use the `cmake-gui` tool, so you can easily select/de-select packages that are either desired or unnecessary. We used steps 1 through 4.
 * If the only extra module you need is the ArUco library, you can set `OPENCV_EXTRA_MODULES_PATH` to be `~/opencv_contrib/modules/aruco`
 
-Once you have successfully built OpenCV including the ArUco library and `opencv_contrib` samples, :
+### Building and Running the Program
+Once you have successfully built OpenCV including the ArUco library and `opencv_contrib` samples, create files `DetectMarkers.cpp` and `CMakeLists.txt`. Copy the code from the [opencv_contrib Github]()
 ```
 cd ~/opencv
 ```
