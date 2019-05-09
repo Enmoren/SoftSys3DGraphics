@@ -57,6 +57,8 @@ In an effort to make the objects look more realistic, we researched different sh
 #### Further Exploration: ArUco Markers with OpenCV
 TODO
 
+<p align="center"> <img src ="https://github.com/Enmoren/SoftSys3DGraphics/blob/master/reports/marker.gif"/> </p>
+
 #### Further Exploration: Interfacing OpenGL with Android
 The following gif is an example of an Android and OpenGL [tutorial](https://github.com/doggycoder/AndroidOpenGLDemo) that we found online and were able to run successfully. When we tried to load other objects, we found that the mtl loader requires texture maps in the form of images. This limitation motivated us to learn more about texture and shading techniques.
 
